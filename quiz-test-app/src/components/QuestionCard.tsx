@@ -8,6 +8,7 @@ type Props = {
   submitAnswer: (point: number) => void,
   total: number,
   current: number,
+  gameOverFn: () => void
 }
 
 const QuestionCard = (props: Props) => {
@@ -59,7 +60,7 @@ const QuestionCard = (props: Props) => {
                   {e}</button>
               </div>
           })}
-          <div className="d-flex justify-content-center"><Timer submitFn={onSubmit}/></div>
+          <div className="d-flex justify-content-center"><Timer gameOverFn={props.gameOverFn} submitFn={onSubmit}/></div>
         </div>
 
       </>

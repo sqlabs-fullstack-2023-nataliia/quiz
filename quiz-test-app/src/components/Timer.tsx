@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 
 type Props = {
     submitFn: (answer: string) => void;
+    gameOverFn: () => void;
 }
 
 const Timer = (props: Props) => {
@@ -13,6 +14,7 @@ const Timer = (props: Props) => {
         setTime(tmp);
         if(tmp < 0){
             props.submitFn('');
+            props.gameOverFn();
         }
     }
 

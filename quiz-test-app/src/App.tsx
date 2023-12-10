@@ -52,6 +52,10 @@ function App() {
     } 
   }
 
+  const gameOverFn = () => {
+    index.current = questions.length;
+  }
+
   const setStatrtPage = () => {
     setIsLoading(false);
     setShowResult(false);
@@ -85,6 +89,7 @@ function App() {
               submitAnswer={submitAnswer} 
               total={questions.length} 
               current={index.current + 1} 
+              gameOverFn={gameOverFn}
               key={index.current}/>
           : showResult && <ShowResults 
             callbackFn={setStatrtPage}
